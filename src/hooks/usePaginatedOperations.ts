@@ -209,6 +209,29 @@ const DEFAULT_ORDER = 'desc';
  * pagination and operations decoded into a FriendlyOperation shape for UI use.
  * 
  * At least one of `accountId` or `transactionHash` must be provided.
+ *
+ * @param options - Pagination, filtering, and target account/transaction options
+ *
+ * @example
+ * ```tsx
+ * const { operations, isLoading, hasNext, nextPage } = usePaginatedOperations({
+ *   accountId: "GB...",
+ *   limit: 15,
+ * });
+ *
+ * if (isLoading) return <span>Loading operations...</span>;
+ * return (
+ *   <div>
+ *     {operations.map(op => (
+ *       <div key={op.id}>{op.description}</div>
+ *     ))}
+ *     {hasNext && <button onClick={nextPage}>Next Page</button>}
+ *   </div>
+ * );
+ * ```
+ *
+ * @see [Quick Start Guide](/guide/quick-start)
+ * @see [Transaction Building Guide](/guide/transactions)
  */
 export function usePaginatedOperations(
   options: UsePaginatedOperationsOptions = {}

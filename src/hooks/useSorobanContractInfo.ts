@@ -16,6 +16,23 @@ export interface UseSorobanContractInfoResult {
 
 /**
  * Hook for reading Soroban contract metadata and spec information.
+ *
+ * @param contractId - The contract address (e.g. `CA...`)
+ *
+ * @example
+ * ```tsx
+ * const { metadata, isLoading, error } = useSorobanContractInfo("CA7QY...");
+ *
+ * if (isLoading) return <span>Loading contract metadata...</span>;
+ * return (
+ *   <div>
+ *     <div>Wasm Hash: {metadata?.wasmHash}</div>
+ *     <div>Admin: {metadata?.admin}</div>
+ *   </div>
+ * );
+ * ```
+ *
+ * @see [Soroban Contracts Guide](/guide/soroban)
  */
 export function useSorobanContractInfo(contractId?: string): UseSorobanContractInfoResult {
   const [metadata, setMetadata] = useState<SorobanContractMetadata | null>(null);

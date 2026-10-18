@@ -37,6 +37,20 @@ export interface UseLobstrReturn {
 
 /**
  * Connect to and interact with the LOBSTR wallet extension or connect flow.
+ *
+ * @param options - Configuration options for LOBSTR hook
+ *
+ * @example
+ * ```tsx
+ * const { isConnected, publicKey, connect, disconnect, signTransaction } = useLobstr();
+ *
+ * if (!isConnected) {
+ *   return <button onClick={connect}>Connect LOBSTR</button>;
+ * }
+ * return <div>Connected: {publicKey}</div>;
+ * ```
+ *
+ * @see [Wallet Integration Guide](/guide/wallets)
  */
 export function useLobstr(options: UseLobstrOptions = {}): UseLobstrReturn {
   const { debugLabel = "useLobstr" } = options;

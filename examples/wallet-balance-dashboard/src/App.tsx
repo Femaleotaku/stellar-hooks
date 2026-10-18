@@ -19,6 +19,7 @@ import {
   useStellarAccount,
   useStellarBalance,
 } from "stellar-hooks";
+import { BalanceHistoryChart } from "./components/BalanceHistoryChart";
 
 // ─── Components ───────────────────────────────────────────────────────────────
 
@@ -234,6 +235,7 @@ function NetworkInfoSection() {
 
 function Dashboard() {
   const { isConnected, publicKey } = useFreighter();
+  const { xlmBalance } = useStellarBalance(publicKey || "");
 
   if (!isConnected) {
     return (
@@ -261,6 +263,7 @@ function Dashboard() {
       {publicKey && (
         <>
           <BalanceSection publicKey={publicKey} />
+          <BalanceHistoryChart currentBalance={xlmBalance?.balance} publicKey={publicKey} />
           <AccountDetailsSection publicKey={publicKey} />
           <NetworkInfoSection />
         </>

@@ -119,6 +119,32 @@ function readContractDataVal(
 
 // ─── Hook ─────────────────────────────────────────────────────────────────────
 
+/**
+ * Read a single ledger-entry key from a Soroban contract's storage with optional polling.
+ *
+ * @param contractId - The contract address (e.g. `CA...` or `C...`)
+ * @param key - The storage key as a string symbol or `xdr.ScVal`
+ * @param options - Additional options including durability and custom parser
+ *
+ * @example
+ * ```tsx
+ * import { useContractStorageEntry } from "stellar-hooks";
+ * import { scValToNative } from "@stellar/stellar-sdk";
+ *
+ * function AdminDisplay({ contractId }: { contractId: string }) {
+ *   const { data, isLoading } = useContractStorageEntry(
+ *     contractId,
+ *     "admin",
+ *     { parseResult: (val) => scValToNative(val) }
+ *   );
+ *
+ *   if (isLoading) return <span>Loading admin...</span>;
+ *   return <span>Admin: {String(data)}</span>;
+ * }
+ * ```
+ *
+ * @see [Soroban Contracts Guide](/guide/soroban)
+ */
 // Overload 1: no parser supplied → `data` is the raw `xdr.ScVal`.
 export function useContractStorageEntry(
   contractId: StellarContractId | null | undefined,

@@ -154,6 +154,44 @@ function isOperationBuilder(
   return typeof operation === "function";
 }
 
+/**
+ * Build, sign, and submit multiple Stellar operations atomically within a single transaction.
+ *
+ * @param options - Configuration options for mode, fee, memo, and lifecycle callbacks
+ *
+ * @example
+ * ```tsx
+ * import { useMultiOperationTransaction } from "stellar-hooks";
+ * import { Operation, Asset } from "@stellar/stellar-sdk";
+ *
+ * function BatchTransfer() {
+ *   const { submit, isLoading, isSuccess } = useMultiOperationTransaction();
+ *
+ *   const handleBatch = async () => {
+ *     await submit([
+ *       Operation.payment({
+ *         destination: "GB...",
+ *         asset: Asset.native(),
+ *         amount: "10",
+ *       }),
+ *       Operation.payment({
+ *         destination: "GC...",
+ *         asset: Asset.native(),
+ *         amount: "20",
+ *       }),
+ *     ]);
+ *   };
+ *
+ *   return (
+ *     <button onClick={handleBatch} disabled={isLoading}>
+ *       {isLoading ? "Submitting..." : "Send Batch Payment"}
+ *     </button>
+ *   );
+ * }
+ * ```
+ *
+ * @see [Transaction Building Guide](/guide/transactions)
+ */
 export function useMultiOperationTransaction(
   options: UseMultiOperationTransactionOptions = {},
 ): UseMultiOperationTransactionReturn {

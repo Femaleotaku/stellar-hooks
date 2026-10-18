@@ -19,6 +19,28 @@ interface UseOracleHistoryOptions {
 /**
  * Hook to fetch historical price records from a Soroban oracle contract.
  * It pages through the contract's `price_history` method.
+ *
+ * @param options - Oracle contract address and pagination options
+ *
+ * @example
+ * ```tsx
+ * const { records, loading, error, fetchPage, hasMore } = useOracleHistory({
+ *   contractId: "CA7QY...",
+ *   pageSize: 50,
+ * });
+ *
+ * return (
+ *   <div>
+ *     <h3>Oracle Price History</h3>
+ *     {records.map(r => (
+ *       <div key={r.ledger}>Ledger {r.ledger}: {r.price}</div>
+ *     ))}
+ *     {hasMore && <button onClick={fetchPage} disabled={loading}>Load More</button>}
+ *   </div>
+ * );
+ * ```
+ *
+ * @see [Soroban Contracts Guide](/guide/soroban)
  */
 export function useOracleHistory({
   contractId,

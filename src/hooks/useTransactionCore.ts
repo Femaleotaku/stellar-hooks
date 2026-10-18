@@ -101,6 +101,25 @@ const initial: TransactionState = {
 
 // ─── Hook ─────────────────────────────────────────────────────────────────────
 
+/**
+ * Core submission and polling engine for Stellar/Soroban transactions.
+ *
+ * @param options - Configuration options for mode ("soroban" | "classic"), retries, and callbacks
+ *
+ * @example
+ * ```tsx
+ * const { submit, status, isLoading, isSuccess, error } = useTransactionCore({
+ *   mode: "soroban",
+ *   timeoutSeconds: 30,
+ * });
+ *
+ * const handleSubmit = async (signedXdr: string) => {
+ *   await submit(signedXdr);
+ * };
+ * ```
+ *
+ * @see [Transaction Building Guide](/guide/transactions)
+ */
 export function useTransactionCore(
   options: UseTransactionCoreOptions = {},
 ): UseTransactionCoreReturn {

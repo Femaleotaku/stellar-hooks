@@ -109,6 +109,26 @@ function reducer<T>(state: QueryState<T>, action: QueryAction<T>): QueryState<T>
 /** Default TTL used when `cacheKey` is provided but `cacheTtl` is not. */
 const DEFAULT_CACHE_TTL = 5000;
 
+/**
+ * Base data-fetching primitive for stellar-hooks with caching, polling, deduplication, and abort support.
+ *
+ * @param fetcher - Async fetcher function receiving an optional `AbortSignal`
+ * @param options - Configuration options for caching, intervals, debounce, and state
+ *
+ * @example
+ * ```tsx
+ * const { data, isLoading, refetch } = useStellarQuery(
+ *   async (signal) => {
+ *     const res = await fetch("https://horizon.stellar.org/fee_stats", { signal });
+ *     return res.json();
+ *   },
+ *   { cacheKey: "fee-stats", cacheTtl: 10000 }
+ * );
+ * ```
+ *
+ * @see [Caching & Performance Guide](/guide/caching)
+ * @see [Provider Setup Guide](/guide/provider)
+ */
 export function useStellarQuery<T>(
   fetcher: (signal?: AbortSignal) => Promise<T | null>,
   options: UseStellarQueryOptions<T> = {}

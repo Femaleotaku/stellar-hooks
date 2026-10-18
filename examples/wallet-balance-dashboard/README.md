@@ -7,6 +7,7 @@ A minimal example app demonstrating `useFreighter` + `useStellarAccount` + `useS
 - ✅ Wallet connection via Freighter browser extension
 - ✅ Fetch account details from Horizon using `useStellarAccount`
 - ✅ Display native XLM balance using `useStellarBalance`
+- ✅ Historical balance chart with interactive timeframes (24H, 7D, 30D, 90D, 1Y)
 - ✅ Show account metadata: sequence, thresholds, subentries, last modified ledger
 - ✅ Clean, dark-themed UI with responsive design
 

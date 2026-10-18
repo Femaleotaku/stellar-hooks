@@ -38,6 +38,24 @@ export interface UseAssetBalanceReturn {
 /**
  * Return the balance of a specific asset (native or issued) for a given account,
  * with optional live updates via streaming.
+ *
+ * @example
+ * ```tsx
+ * // Query native XLM balance
+ * const { balance, formattedBalance, isLoading } = useAssetBalance(
+ *   publicKey,
+ *   "native"
+ * );
+ *
+ * // Query issued asset balance
+ * const { balance: usdcBalance } = useAssetBalance(publicKey, {
+ *   code: "USDC",
+ *   issuer: "GA5ZSEJYB37JRC5AVCIA5MOP4RHTM335X2KGX3IHOJAPP5RE34K4KZVN",
+ * });
+ * ```
+ *
+ * @see [Quick Start Guide](/guide/quick-start)
+ * @see [Provider Setup Guide](/guide/provider)
  */
 export function useAssetBalance(
   publicKey: StellarPublicKey | null | undefined,

@@ -16,6 +16,19 @@ export interface UseFeeStatsResult {
 
 /**
  * Hook for fetching dynamic fee estimation stats from Horizon/Soroban RPC.
+ *
+ * @param serverUrl - Optional custom server URL to fetch fee statistics from
+ *
+ * @example
+ * ```tsx
+ * const { feeStats, isLoading } = useFeeStats();
+ *
+ * if (isLoading) return <span>Loading fees...</span>;
+ * return <div>Recommended Fee: {feeStats?.modeFee} stroops</div>;
+ * ```
+ *
+ * @see [Transaction Building Guide](/guide/transactions)
+ * @see [Network Management Guide](/guide/network)
  */
 export function useFeeStats(serverUrl?: string): UseFeeStatsResult {
   const [feeStats, setFeeStats] = useState<FeeStats | null>(null);

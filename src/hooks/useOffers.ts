@@ -7,6 +7,29 @@ import { validatePublicKey } from "../utils";
 
 export type { UseOffersOptions, UseOffersReturn } from "../types";
 
+/**
+ * Fetch and paginate active DEX offers created by a specific Stellar account.
+ *
+ * @param publicKey - Stellar account address to fetch offers for
+ * @param options - Pagination and polling configuration
+ *
+ * @example
+ * ```tsx
+ * const { offers, isLoading, error, nextPage } = useOffers(publicKey, { limit: 10 });
+ *
+ * if (isLoading) return <span>Loading open offers...</span>;
+ * return (
+ *   <ul>
+ *     {offers.map(offer => (
+ *       <li key={offer.id}>Offer #{offer.id}: {offer.amount} @ {offer.price}</li>
+ *     ))}
+ *   </ul>
+ * );
+ * ```
+ *
+ * @see [Quick Start Guide](/guide/quick-start)
+ * @see [Transaction Building Guide](/guide/transactions)
+ */
 export function useOffers(
   publicKey: string | null | undefined,
   options: UseOffersOptions = {}
