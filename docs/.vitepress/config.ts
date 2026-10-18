@@ -13,6 +13,13 @@ export default defineConfig({
     ['meta', { name: 'theme-color', content: '#3b82f6' }],
   ],
 
+  locales: {
+    root: {
+      label: 'English',
+      lang: 'en-US',
+    },
+  },
+
   themeConfig: {
     logo: '/logo.svg',
     
@@ -21,6 +28,16 @@ export default defineConfig({
       { text: 'Hooks', link: '/hooks/' },
       { text: 'API', link: '/api/' },
       { text: 'Examples', link: '/examples/' },
+      {
+        text: 'Language',
+        ariaLabel: 'Language Menu',
+        items: [
+          { text: 'English', link: '/' },
+          { text: 'Español', link: '/es/' },
+          { text: '简体中文', link: '/zh/' },
+          { text: 'Português', link: '/pt/' },
+        ],
+      },
     ],
 
     sidebar: {
@@ -204,6 +221,7 @@ export default defineConfig({
             { text: 'Wallet Connection', link: '/examples/wallet-connection' },
             { text: 'Payment Flow', link: '/examples/payment-flow' },
             { text: 'Soroban Contract', link: '/examples/soroban-contract' },
+            { text: 'Soroban Activity Explorer', link: '/examples/soroban-activity-explorer' },
             { text: 'Multi-wallet', link: '/examples/multi-wallet' },
           ]
         }

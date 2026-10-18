@@ -84,6 +84,7 @@ For more advanced examples, check out:
 - **[Multisig Signing Flow](../multisig-signing-flow/)** - Collect multiple signatures for a transaction before submission
 - **[Path Payment Swap](../path-payment-swap/)** - Asset swapping with slippage tolerance
 - **[Soroban Dashboard](../soroban-dashboard/)** - Soroban contract interactions
+- **[Soroban Activity Explorer](../soroban-activity-explorer/)** - Soroban contract event and invocation inspector
 
 ## Next Steps
 
