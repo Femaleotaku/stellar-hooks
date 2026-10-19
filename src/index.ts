@@ -478,6 +478,17 @@ export type { ErrorStrings, ErrorStringKey } from "./utils/errorStrings";
 export { decodeXdr, formatXdrResult, detectXdrType } from "./utils/xdr";
 export type { XdrDecodeResult } from "./utils/xdr";
 
+export {
+  filterHistory,
+  historyToCsv,
+  historyToJson,
+  normalizeOperation,
+  HISTORY_CSV_COLUMNS,
+  HISTORY_JSON_SCHEMA,
+  HISTORY_JSON_SCHEMA_VERSION,
+} from "./utils/historyExport";
+export type { HistoryFilter, NormalizedHistoryEntry } from "./utils/historyExport";
+
 export { useOfferBook } from "./hooks/useOfferBook";
 export type { UseOfferBookOptions } from "./hooks/useOfferBook";
 
