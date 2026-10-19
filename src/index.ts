@@ -188,6 +188,16 @@ export type {
 } from "./hooks/useSorobanTokenBalance";
 
 export { useMultiSig } from "./hooks/useMultiSig";
+
+export { useProposeTransaction } from "./hooks/useProposeTransaction";
+export type {
+  ProposeOptions,
+  TransactionProposal,
+  UseProposeTransactionReturn,
+} from "./hooks/useProposeTransaction";
+export { exportPartialXdr, importPartialXdr, mergeSignatures, toShareLink } from "./utils/partialXdr";
+export { decodeInvocationArgs } from "./utils/decodeInvocationArgs";
+export type { DecodedArgument } from "./utils/decodeInvocationArgs";
 export type {
   BuildOptions,
   SignerEntry,
