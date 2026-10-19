@@ -207,6 +207,11 @@ export type {
 } from "./hooks/useMultiSig";
 
 export { useMultiSigThreshold } from "./hooks/useMultiSigThreshold";
+
+export { useCollectSignatures } from "./hooks/useCollectSignatures";
+export type { UseCollectSignaturesReturn } from "./hooks/useCollectSignatures";
+export { getSignatureStatus, requiredThresholdLevel } from "./utils/signatureStatus";
+export type { SignatureStatus, ThresholdInfo, ThresholdLevel as SignatureThresholdLevel } from "./utils/signatureStatus";
 export type {
   ThresholdLevel,
   UseMultiSigThresholdOptions,
