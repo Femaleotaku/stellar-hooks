@@ -848,3 +848,18 @@ export type {
 } from "./hooks/useNotificationPermission";
 
 export { formatTokenAmount, parseTokenAmount, DEFAULT_TOKEN_DECIMALS } from "./utils/tokenAmount";
+
+export { useResourceEstimate } from "./hooks/useResourceEstimate";
+export type { UseResourceEstimateOptions, UseResourceEstimateReturn } from "./hooks/useResourceEstimate";
+export {
+  extractResourceEstimate,
+  evaluateResourceUsage,
+  DEFAULT_RESOURCE_LIMITS,
+} from "./utils/resourceEstimate";
+export type {
+  ResourceEstimate,
+  ResourceLimits,
+  ResourceWarning,
+  ResourceEvaluation,
+  ResourceName,
+} from "./utils/resourceEstimate";
