@@ -9,9 +9,7 @@ This list is generated from the git history and is maintained alongside the
 
 Once your PR is merged, comment on it (or any issue) with:
 
-```
-@all-contributors please add @your-github-handle for code
-```
+
 
 Replace `code` with any [contribution type](https://allcontributors.org/docs/en/emoji-key)
 (`doc`, `test`, `bug`, `ideas`, `review`, ...). You can also open a PR that adds your
